@@ -12,8 +12,7 @@ fi
 
 "${PIP_CMD[@]}"
 echo "Commitizen version: $(cz version)"
-
-CZ_CMD=('cz check')
-echo "${CZ_CMD[@]}"
-"${CZ_CMD[@]}"
+echo "!!!${GITHUB_BASE_REF}"
+echo "cz check --rev-range origin/${GITHUB_BASE_REF}.."
+cz check --rev-range origin/${GITHUB_BASE_REF}..
 echo "Done."
